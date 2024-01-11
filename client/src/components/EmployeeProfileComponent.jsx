@@ -101,7 +101,7 @@ export default function EmployeeProfileComponent() {
   useEffect(() => {
     try {
       const token = localStorage.getItem("token");
-      axios.get(`http://localhost:3000/employee/list?page=${currentPage}&pageSize=${pageSize}&keyword=${keyword}`, {
+      axios.get(`http://localhost:5000/employee/list?page=${currentPage}&pageSize=${pageSize}&keyword=${keyword}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -135,7 +135,7 @@ export default function EmployeeProfileComponent() {
         // });
 
         const token = localStorage.getItem("token");
-        axios.get(`http://localhost:3000/employee/list?page=${currentPage}&pageSize=${pageSize}&keyword=${e.target.value}`, {
+        axios.get(`http://localhost:5000/employee/list?page=${currentPage}&pageSize=${pageSize}&keyword=${e.target.value}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },

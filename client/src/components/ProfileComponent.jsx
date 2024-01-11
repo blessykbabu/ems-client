@@ -32,7 +32,7 @@ console.log("id in employee:",id)
         console.log("token:",token)
   
         const response = await axios.get(
-          'http://localhost:3000/myprofile',
+          'http://localhost:5000/myprofile',
           
           {
             headers: {

@@ -38,7 +38,7 @@ function UpdateComponent() {
   const getDetails = async () => {
     try {
       const token = localStorage.getItem("token");
-      const response = await axios.get(`http://localhost:3000/employee/profile/${id}`,
+      const response = await axios.get(`http://localhost:5000/employee/profile/${id}`,
        {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -68,7 +68,7 @@ function UpdateComponent() {
     setLoading(true)
     try {
       const token = localStorage.getItem("token");
-      const response = await axios.delete(`http://localhost:3000/employee/delete/${id}`,  {
+      const response = await axios.delete(`http://localhost:5000/employee/delete/${id}`,  {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -120,7 +120,7 @@ function UpdateComponent() {
         const token = localStorage.getItem("token");
         setLoading(true)
         const response = await axios.put(
-          `http://localhost:3000/employee/update/${id}`,
+          `http://localhost:5000/employee/update/${id}`,
           values,
           {
             headers: {

@@ -44,7 +44,7 @@ export function Logout() {
       try {
         const token = localStorage.getItem('token');
         const response = await axios.post(
-          'http://localhost:3000/logout',
+          'http://localhost:5000/logout',
           {},
           {
             headers: {

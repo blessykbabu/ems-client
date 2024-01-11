@@ -39,7 +39,7 @@ export default function ResetPassword() {
       const token = localStorage.getItem("token");
       if(token){
 
-      var response = await axios.post(`http://localhost:3000/reset-password`, values,
+      var response = await axios.post(`http://localhost:5000/reset-password`, values,
       {
         headers: {
           Authorization: `Bearer ${token}`,
