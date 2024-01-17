@@ -7,8 +7,11 @@ import SuccessDelete from "./SuccessDelete";
 import ErrorComponent from "./ErrorComponent";
 import Loading from "./Loading";
 import SuccessComponent from "./SuccessComponent";
+import { urls } from "../../utils/url";
 
 function UpdateComponent() {
+  const HOSTED_SERVER_URL = urls();
+
   const { id } = useParams("");
 
   const [editData, setEditData] = useState({});
@@ -38,7 +41,7 @@ function UpdateComponent() {
   const getDetails = async () => {
     try {
       const token = localStorage.getItem("token");
-      const response = await axios.get(`http://localhost:5000/employee/profile/${id}`,
+      const response = await axios.get(`${HOSTED_SERVER_URL}/employee/profile/${id}`,
        {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -68,7 +71,7 @@ function UpdateComponent() {
     setLoading(true)
     try {
       const token = localStorage.getItem("token");
-      const response = await axios.delete(`http://localhost:5000/employee/delete/${id}`,  {
+      const response = await axios.delete(`${HOSTED_SERVER_URL}/employee/delete/${id}`,  {
         headers: {
           Authorization: `Bearer ${token}`,
         },

@@ -1,35 +1,4 @@
 
-// import './AdminLogin.css'
-// export function AdminLgin(){
-
-//     return(
-//         <>
-//         <div className="login-page">
-//   <div className="form">
-//     <form className="register-form">
-//       <input type="text" placeholder="name" />
-//       <input type="password" placeholder="password" />
-//       <input type="text" placeholder="email address" />
-//       <button>create</button>
-//       <p className="message">
-//         Already registered? <a href="#">Sign In</a>
-//       </p>
-//     </form>
-//     <form className="login-form">
-//       <input type="text" placeholder="username" />
-//       <input type="password" placeholder="password" />
-//       <button>login</button>
-//       <p className="message">
-//         Not registered? <a href="#">Create an account</a>
-//       </p>
-//     </form>
-//   </div>
-// </div>
-
-//         </>
-//     )
-// }
-
 
 
 import React from "react";
@@ -38,14 +7,19 @@ import { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { object, string, number } from "yup";
 import axios from "axios";
-import {FaEye,FaEyeSlash} from "react-icons/fa"
+import {FaEye,FaEyeSlash} from "react-icons/fa";
 import { Link,useNavigate } from "react-router-dom";
+import { urls } from "../../utils/url";
+// import "dotenv";
+// dotenv.config();
 
 // import SuccessComponent from "./SuccessComponent";
 // import ErrorComponent from "./ErrorComponent";
 // import Loading from "./Loading";
 
 export default function Login() {
+  const HOSTED_SERVER_URL = urls();
+
   const [serverSuccess, setServerSuccess] = useState("");
   const [serverError, setServeError] = useState("");
   const [validationMsg, setvalidationMsg] = useState("");
@@ -63,7 +37,7 @@ export default function Login() {
       
 
       console.log("values::",values)
-      const response = await axios.post(`http://localhost:5000/login`,values);
+      const response = await axios.post(`${HOSTED_SERVER_URL}/login`,values);
 // console.log("requset post or not");
       console.log("Login:", response.data);
       // localStorage.setItem("token", response.token);
