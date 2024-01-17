@@ -9,7 +9,7 @@ import { object, string, number } from "yup";
 import axios from "axios";
 import {FaEye,FaEyeSlash} from "react-icons/fa";
 import { Link,useNavigate } from "react-router-dom";
-import { urls } from "../../utils/url";
+import  urls  from "../../utils/url";
 // import "dotenv";
 // dotenv.config();
 

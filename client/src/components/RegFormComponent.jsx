@@ -469,8 +469,10 @@ import "./reg.css";
 import SuccessComponent from "./SuccessComponent";
 import ErrorComponent from "./ErrorComponent";
 import Loading from "./Loading";
+import urls from "../../utils/url";
 
 export default function RegFormComponent() {
+  const HOSTED_SERVER_URL=urls();
   const [serverSuccess, setServerSuccess] = useState("");
   const [serverError, setServeError] = useState("");
   const [validationMsg, setvalidationMsg] = useState("");
@@ -515,7 +517,7 @@ export default function RegFormComponent() {
       console.log("values:",values);
 
       const response = await axios.post(
-        "http://localhost:5000/employee",
+        `${HOSTED_SERVER_URL}/employee`,
         values,
         {
           headers: {

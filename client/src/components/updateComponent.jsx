@@ -7,7 +7,7 @@ import SuccessDelete from "./SuccessDelete";
 import ErrorComponent from "./ErrorComponent";
 import Loading from "./Loading";
 import SuccessComponent from "./SuccessComponent";
-import { urls } from "../../utils/url";
+import  urls  from "../../utils/url";
 
 function UpdateComponent() {
   const HOSTED_SERVER_URL = urls();
@@ -123,7 +123,7 @@ function UpdateComponent() {
         const token = localStorage.getItem("token");
         setLoading(true)
         const response = await axios.put(
-          `http://localhost:5000/employee/update/${id}`,
+          `${HOSTED_SERVER_URL}/employee/update/${id}`,
           values,
           {
             headers: {
